@@ -1,0 +1,372 @@
+.container
+{
+    
+    background-color: var(--light-color-2);
+    box-shadow: 0 2rem 4rem rgba(#000,0.4);
+    overflow: hidden;
+   
+}    
+.rights-end
+{
+    
+    display: none;
+    @media screen and (max-width:1200px)
+    {
+        display: block;
+        font-size: 1.3rem;
+        background-color: var(--dark-color-2);
+        text-align: center;
+        padding: 1.5rem 0;
+    }
+}
+.header
+{
+    background-color: var(--light-color-1);
+    border-bottom: var(--light-color-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: 2px rgba(#ef473a, 0.5) solid;
+    outline-style: inset;
+    z-index: 1;
+    @media screen and (max-width:900px)
+    {
+        margin: 0;
+        width: 100%;
+        padding: 0.7rem 1rem;
+        flex-wrap: wrap;
+    }
+    @media screen and (max-width:600px)
+    {
+        margin: 0;
+        width: 100%;
+        padding: 1rem 2rem;
+        flex-wrap: wrap;
+    }
+
+    
+}
+
+.content
+{
+    display: flex;
+    
+    @media screen and (max-width:1200px)
+    {
+        flex-direction: column;
+    }
+}
+
+.sidebar
+{
+    background-color: var(--dark-color-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.hotel-veiw
+{
+     flex:1;
+     overflow: hidden;
+}
+
+.about
+{
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (max-width:900px)
+    {
+        flex-direction: column;
+    }
+    &__description
+    {
+        padding: 2rem;
+        flex:0 0 60%;
+        margin-right:4rem;
+        background-color: var(--light-color-1);
+        box-shadow:0 1rem 2rem rgba(0,0,0,0.15);
+        border-radius: 8px;
+        font-size: 1.3rem;
+        @media screen and (max-width:900px)
+        {
+            flex: 1;
+            margin-right: 0;
+            margin-bottom: 4rem;
+        }
+
+    }
+
+    &__list
+    {
+        list-style: none;
+        margin: 3rem 0;
+        border-top: 1px solid rgba(0 ,0 ,0,0.15);
+        border-bottom: 1px solid rgba(0 ,0 ,0,0.15);
+        margin: 2rem 1rem;
+        padding: 3rem 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item
+    {
+        flex: 0 0 50%;
+        margin-bottom: 0.7rem;
+    }
+    &__item::before
+    {
+        content: '';
+        display: inline-block;
+        background: url(../img/radio_button_checked.svg) center center/cover;
+        margin-right: 0.5rem;
+        width: 1rem;
+        height: 1rem;
+        
+    }
+    &__recommend
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__count
+    {
+        margin-right: 1rem;
+    }
+
+
+    &__friends
+    {
+        display: flex;
+    }
+
+
+    &__photo
+    {
+        background-color: #fff;
+        width: 40px;
+        border-radius: 50%;
+        padding: 0.3rem;
+        &:not(:last-child)
+        {
+            margin-right: -1rem;
+        }
+    }
+    
+    
+    &__reviews
+    {
+        flex:1;  
+        display: flex;     
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media screen and (max-width:900px)
+        {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            flex: 0 0 100%;
+        }
+        @media screen and (max-width:600px)
+        {
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: stretch;
+            flex: 0 0 100%;
+        }
+    }
+
+    &__review
+    {
+        
+        padding: 2rem 1.5rem;
+        box-shadow:0 1rem 2rem rgba(0,0,0,0.15);
+        background-color: var(--light-color-1);
+        border-radius: 8px;
+        border-top-left-radius:25px ;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 4rem;
+        flex: 1;
+        @media screen and (max-width:900px)
+        {
+           flex: 45%;
+           margin: 0;
+           margin-bottom: 4rem;
+        }
+        &:not(:last-of-type)
+        {
+            @media screen and (max-width:900px) 
+            {
+                margin-right: 4rem;
+            }
+            @media screen and (max-width:600px) 
+            {
+                margin-right: 0rem;
+            }
+        }
+        
+
+       
+        
+       
+
+        &::before
+        {
+            content: '\201C';
+            position: absolute;
+            top: -3rem;
+            left: -0.8rem;
+            font-size: 20rem;
+            color: var(--light-color-2);
+            font-family: sans-serif;
+            line-height: 1;
+            z-index: 1;
+        }
+    
+    }
+
+    &__review--text
+    {
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        position: relative;
+        z-index: 2;
+    }
+    &__review--user
+    {
+        margin: 2rem 0rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+    &__review--photo
+    {
+        display: block;
+        width: 40px;
+        border-radius: 50%;
+        margin-right: 0.8rem;
+    }
+    &__review--name
+    {
+        font-weight: 600;
+        color: var(--primary-color-light);
+        font-size: 1.15rem;
+    }
+    &__review--date
+    {
+        color: var(--grey-color-1);
+    }
+    &__review--rating
+    {
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 2.5rem;
+        color: var(--primary-color-dark);
+        display: flex;
+        align-items: flex-end;
+        span
+        {
+            font-size: 1rem;
+            color : var(--grey-color-2);
+            margin: 0.8rem 0;
+            padding: 0 0.5rem;
+        }
+    }
+    .button-review
+    {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__cta
+    {
+        padding: 3.5rem 2rem;
+        flex: 0 0 100%;
+        margin:4rem 0;
+        border-radius: 8px;
+        text-align: center;
+
+    }
+    &__book
+    {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+
+    &__button
+    {
+        border: none;
+        background: var(--primary-color-dark);       
+        background-image: linear-gradient(to right, #cb2d3e,#ef473a);
+        
+        font-size: 1.3rem;
+        font-weight: 700;
+        border-radius: 100px;      
+        width: 18rem;  
+        outline: transparent;
+        -moz-outline-radius: 0;
+        overflow: hidden;
+        position: relative;
+        color: var(--light-color-1);
+        transition: all  0.05s ;
+
+        &--visible
+        {
+            padding: 1.5rem 3.5rem;
+            display: inline-block;
+            transition: all  0.4s ease-in-out ;
+
+        }
+        &--invisible
+        {
+            padding: 1.5rem 3.5rem;
+            display: inline-block;
+            position: absolute;
+            top: -100%;
+            left: 0;
+            transition: all 0.4s ease-in-out ;
+
+        }
+        &:active
+        {
+            transform: translateY(2px);
+        }
+        &:focus
+        {
+            animation: scale 1.5s linear infinite;
+            color: white ;
+            
+        }
+        &:hover
+        {
+            background-image: linear-gradient(to left, #cb2d3e,#ef473a);
+        }
+       
+        &:hover > &--invisible
+        {
+            transform: translateY(100%);
+        }
+        &:hover > &--visible
+        {
+            transform: translateY(100%);
+        }
+    }
+
+
+
+
+    
+}
+

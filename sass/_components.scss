@@ -1,0 +1,457 @@
+.btn
+{
+    max-width: 15rem;
+    display: inline;
+    border: none;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    color: var(--grey-color-2);
+    border-bottom: solid 1px var(--primary-color-light);
+    cursor: pointer;
+    outline: transparent;
+    flex: 1;
+    align-self: center;
+    &:hover
+    {
+        color: (--primary-color-light);
+    }
+    &:focus
+    {
+       animation: scale 1.5s linear infinite;
+    }
+   
+
+    @keyframes scale {
+        100%
+        {
+            
+            transform: scale(1);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0,0);
+        }
+        50%
+        {
+            
+            transform: scale(1.08);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0,0.35);
+        }
+        0%
+        {
+           
+            transform: scale(1);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0,0);
+        }
+    }
+
+}
+
+
+.logo
+{
+    height: 3.5rem;
+    flex: 1;
+    margin: auto 2rem;
+    @media screen and (max-width:900px)
+    {
+        flex: 0 0 30%;
+        order: 1;
+        margin: 0;
+    }
+}
+.header__logo
+{
+    height:100% ;
+}
+
+
+
+.search
+{
+    margin: auto 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex: 0 0 40%;
+
+    @media screen and (max-width:900px)
+    {
+        flex: 0 0 100%;
+        order: 3;
+        margin: 0.5rem 0;
+    }
+    &__input
+    {
+        font-family: inherit;
+        font-size: inherit;
+        background-color: var(--light-color-2);
+        border: none;
+        color: inherit;
+        padding: 0.7rem 1.5rem;
+        border-radius:100px ;
+        width: 80%;
+        @media screen and (max-width:900px)
+        {
+            margin: 0;
+            width: 100%;
+            transform: translateX(-2px);
+        }
+       
+        transition: all 0.3s;
+        outline: transparent;
+
+        &:focus
+        {
+            width: 100%;
+            background-color: var(--light-color-3);
+        }
+
+        
+    }
+
+    &__button
+    {
+        border: none;
+        background-color:transparent;
+        margin-left: -3rem;
+
+        &:focus
+        {
+            outline: none;
+        }
+        &:active
+        {
+            transform: translateY(3px);
+        }
+    }
+
+    &__icon
+    {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--primary-color-dark);
+    }
+
+}
+
+
+
+.user-nav
+{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    @media screen and (max-width:900px)
+    {
+        flex: 1;
+        order: 2;
+        justify-content: flex-start;
+    }
+    @media screen and (max-width:900px)
+    {
+        flex: 1;
+        order: 2;
+        justify-content: flex-end;
+    }
+
+    &__icon-box
+    {
+        margin-left: 1rem;
+        cursor: pointer;
+        display: flex;
+        padding: 1rem 1.5rem;
+        align-items: center;
+        justify-content: stretch;
+        position: relative;
+        align-self: stretch;
+
+        @media screen and (max-width:900px)
+        {
+            padding: 1rem ;
+            margin-left: 0;
+        }
+
+        &:hover
+        {
+            background-color: var(--light-color-2);
+        }
+    }
+
+    &__icon
+    {
+        height: 2.25rem;
+        width: 2.25rem;
+        display: inline-block;
+        fill: var(--primary-color-dark);
+    }
+
+    &__notification
+    {
+        background-color: var(--primary-color-light);
+        height: 1.8rem;
+        width: 1.8rem;
+        color: var(--light-color-1);
+        border-radius:50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:0.7rem;
+        right: 0.6rem;
+
+    }
+    &__user-photo
+    {
+        height: 3.5rem;
+        width: 3.5rem;
+        border-radius: 50%;
+        margin: auto 0.8rem;
+        @media screen and (max-width:900px)
+        {
+           margin: 0 0.5rem;
+        }
+    }
+    &__user-name
+    {
+        font-weight: 400;
+        font-size: 1.3rem;
+        color: var(dark-color-3);
+        margin-right: 2rem;
+        @media screen and (max-width:900px)
+        {
+           margin-right: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+.menu
+{
+    list-style: none;
+    margin-top: 3rem;
+    width: 100%;
+
+    @media screen and (max-width:1200px)
+    {
+        display: flex;
+        margin-top: 0;
+        justify-content: space-between;
+    }
+
+    &__item
+    {
+        color: var(--light-color-1);
+        position: relative;
+
+       @media screen and (max-width:1200px)
+        {
+           flex: 0 0 23%;
+        } 
+        &:not(:last-child)
+        {
+            margin-bottom: 1.5rem;
+            @media screen and (max-width:1200px)
+             {
+                margin: 0;
+             } 
+        }
+    }
+
+    &__item:active::before
+    {
+        filter: brightness(0.8);
+    }
+
+    &__item::before
+    {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 5px;
+        background-color: var(--primary-color-light);
+        transform: scaleY(0);
+        transition: transform 0.2s ,width  0.5s 0.2s cubic-bezier(0.87, 0, 0.13, 1), filter 0.3s;
+    }
+
+    &__item:hover::before , &__item--active::before
+    {
+        transform: scaleY(1);
+        width: 100%;
+    }
+    
+
+    &__link:link, &__link:visited
+    {
+        width: 100%;
+        text-decoration: none;     
+        color: inherit;
+        padding: 1.5rem 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.1rem;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        letter-spacing: 0.15rem;
+
+        @media screen and (max-width:1200px)
+        {
+            padding: 0.7rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+        }
+
+        span
+        {
+            text-transform: uppercase;
+        }
+    }
+
+    &__icon
+    {
+        height: 3rem;
+        width: 3rem;
+        border: none;
+        background: transparent;
+        fill:currentColor;
+        margin-right:1.5rem ;
+        @media screen and (max-width:600px)
+        {
+            margin: 0;
+        }
+    }
+}
+.rights
+{
+    text-align: center;
+    align-content: flex-end;
+    margin: 3rem 0;
+    font-size: 1.1rem;
+    font-weight: 300;    
+    @media screen and (max-width:1200px)
+    {
+       display: none;
+    }
+}
+
+
+
+.gallery
+{
+    display: flex;
+    width: 100%;
+    border: none;
+    @media screen and (max-width:600px)
+        {
+            height:13rem;
+        }
+    &__item
+    {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+    }
+    &__photo
+    {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+
+
+.overview
+{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px rgba(#ef473a, 0.2) solid;
+
+    &__heading
+    {        
+        color:var(--primary-color-dark);
+        font-size: 3rem;
+        padding: 0 1rem;
+        margin-right: 2rem;
+        flex: 1;
+        @media screen and (max-width:600px)
+        {
+            font-size: 2rem;
+            margin-right: 0;
+            text-align: center;
+            padding: 0;
+        }
+        @media screen and (max-width:900px)
+        {
+            font-size: 2.4rem;
+        }
+    } 
+    &__stars
+    {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    &__icon
+    {
+        width: 2rem;
+        height: 2rem;
+        fill: var(--primary-color-light);
+    }
+
+    &__location
+    {
+        fill: var(--primary-color-dark);
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+        align-items: center;
+       
+    } 
+
+    &__location--btn
+    {
+        margin: 0 0.5rem 0 1.5rem;
+        @media screen and (max-width:600px)
+        {
+            margin-right: 0.5rem;
+        }
+    }
+    
+
+    &__rating
+    {
+        margin-left: 2rem;
+        align-self: stretch;
+        background-color: var(--primary-color-light);
+        display: flex;
+        flex-direction: column;
+        color: var(--light-color-1);
+        justify-content: center;
+        align-items: center;
+        padding:1rem;
+       
+        &--avg
+        {
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        &--vote
+        {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    }
+}
